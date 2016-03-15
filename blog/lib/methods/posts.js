@@ -2,11 +2,12 @@ Meteor.methods({
   submitPost: function(post) {
 
     var user = Meteor.user();
+    console.log(user.emails[0].address);
     if (!user)
       throw new Meteor.Error(401, 'You need to log in first');
 
     var additionalParams = {
-      author: 'Author',
+      author: user.emails[0].address,
       createdAt: new Date(),
       userId: user._id
     }
