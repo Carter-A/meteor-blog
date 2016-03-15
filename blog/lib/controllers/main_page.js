@@ -1,4 +1,7 @@
 MainPageController = BaseController.extend({
-  layoutTemplate: 'mainLayout',
-  template: 'postsList'
+  template: 'postsList',
+
+  data: function(){
+    return { posts: Posts.find({}, { sort: { createdAt: -1 } }) };
+  }
 });
