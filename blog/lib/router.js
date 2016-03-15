@@ -1,4 +1,6 @@
 Router.configure({
+  loadingTemplate: 'spinner',
+  notFoundTemplate: 'notFound'
 });
 
 Router.route('/', {
